@@ -13,7 +13,7 @@ pipeline {
         MP_METRICS_TAGS='tier=integration'
     }
     stages {
-        stage('report') {
+        stage('Report') {
             steps {
                 script{
                     pom = readMavenPom file: 'pom.xml'
@@ -22,6 +22,12 @@ pipeline {
                     echo "Build number is ${payaraBuildNumber}"
                     echo "jdkVer = ${jdkVer}"
                 }
+            }
+        }
+        stage('Clean') {
+            steps {
+                echo '*#*#*#*#*#*#*#*#*#*#*#*#  Wiping Maven Repo  *#*#*#*#*#*#*#*#*#*#*#*#*#*#*#'
+                sh "rm -rf ~/.m2/repository/*"
             }
         }
         stage('Build') {
