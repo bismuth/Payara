@@ -30,7 +30,7 @@ pipeline {
                 sh "rm -rf ~/.m2/repository/*"
                 
                 echo '*#*#*#*#*#*#*#*#*#*#*#*#  Cleaning /tmp  *#*#*#*#*#*#*#*#*#*#*#*#*#*#*#'
-                sh "rm -rf /tmp/arquillian*; rm -rf /tmp/javaee*; rm -rf /tmp/fileinstall*; rm -rf /tmp/surefire*; rm -rf /tmp/payara*; rm -rf /tmp/cargo*'
+                sh "rm -rf /tmp/arquillian*; rm -rf /tmp/javaee*; rm -rf /tmp/fileinstall*; rm -rf /tmp/surefire*; rm -rf /tmp/payara*; rm -rf /tmp/cargo*"
             }
         }
         stage('Build') {
