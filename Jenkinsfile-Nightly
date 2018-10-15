@@ -312,7 +312,7 @@ pipeline {
                 sh "cp ./appserver/extras/embedded/web/target/payara-embedded-web.jar ./payara-embedded-web-prerelease.jar"
                 
                 echo '*#*#*#*#*#*#*#*#*#*#*#*#  Uploading Distributions  *#*#*#*#*#*#*#*#*#*#*#*#*#*#*#'
-                withAws(region:'eu-west-1', credentials: 'awsPayara') {
+                withAWS(region:'eu-west-1', credentials: 'awsPayara') {
                     s3Upload bucket: 'payara.fish', file: 'payara-prerelease.zip'
                     s3Upload bucket: 'payara.fish', file: 'payara-ml-prerelease.zip'
                     s3Upload bucket: 'payara.fish', file: 'payara-web-prerelease.zip'
